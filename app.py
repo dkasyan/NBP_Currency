@@ -33,12 +33,10 @@ response = requests.get("http://api.nbp.pl/api/exchangerates/tables/C?format=jso
 data = response.json()[0]
 new_data = data['rates']
 
-
 ### Zapisywanie danych do pliku
 data_structure()
 for i in new_data:
     outputing_data(i["currency"], i["code"], i["bid"], i["ask"])
-
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -48,8 +46,6 @@ def message():
         currency = datas.get('currency')
         quantity = datas.get("quantity")
         ask = count_purchases(currency, quantity)
-        return f'Zapłacisz {ask} zł'
-        #print(currency)
-        #print(quantity)
-
+        return render_template("cc_form.html", ask=ask)
+    
     return render_template("cc_form.html")
