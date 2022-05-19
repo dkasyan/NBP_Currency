@@ -43,7 +43,7 @@ def create_table_in_book():
         readings = {}
         readings["PM25"] = round(random.uniform(0, 121), 1)
         readings["PM10"] = round(random.uniform(0, 201), 1)
-        readings["datetime"] = time.strftime('%Y-%m-%d %H:%M:%S')
+        readings["datetime"] = time.strftime('%Y-%m-%d')
 
         c.execute("INSERT INTO readings VALUES (?,?,?,?)",
                   (counter, readings["datetime"], readings["PM25"], readings["PM10"]))
@@ -79,19 +79,12 @@ def read_last_ID_in_book():
     c.close()
 
 
-while logic == False:
+while logic == True:
+    print("Welcome to Tip Calculator")
+    decysion = int(
+        input("Co chcesz wykonać \n"))
+    if decysion == ""
+    
+    
     print("oks")
 
-#for row in c.execute('SELECT * FROM readings ORDER BY PM25 DESC LIMIT 10'):
-#        print(row)
-
-
-#def Add_New_Position(x) Funkcja dodająca coś do listy
-#  Poproś o kwotę
-#  Poproś o datę
-#  Wstaw Kategorię
-#  Dodaj Opis
-# Wyswietl wpis i zapytaj czy wszystko się zgadza.
-# Jeśli tak generuj unikalne ID i zapisz rekord w bazie
-
-# def Przeglądanie to wyświetlenie kadej transakcji razem z unikalnym ID bazy danych
