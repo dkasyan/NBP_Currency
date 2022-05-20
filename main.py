@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np
 import sqlalchemy
 
+from manipulate_functions import read_table_in_book
 
 class book:
     def __init__(self):
@@ -55,15 +56,6 @@ def create_table_in_book():
             break
 
 
-def read_table_in_book():
-    conn = sqlite3.connect('example.db')
-    readings = {}
-    c = conn.cursor()
-    for row in c.execute('SELECT * FROM readings;'):
-        print(row)
-    c.close()
-
-
 def read_last_ID_in_book():
     conn = sqlite3.connect('example.db')
     c = conn.cursor()
@@ -83,8 +75,11 @@ while logic == True:
     print("Welcome to Tip Calculator")
     decysion = int(
         input("Co chcesz wykonać \n"))
-    if decysion == ""
-    
-    
-    print("oks")
+    if decysion == 1:
+        print("oks")
+        read_table_in_book()
+    if decysion == 2:
+        print("dwa")
+        #TODO Add no table error handling
+        create_table_in_book()
 
