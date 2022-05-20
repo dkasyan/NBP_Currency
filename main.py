@@ -9,6 +9,9 @@ import numpy as np
 import sqlalchemy
 
 from manipulate_functions import read_table_in_book
+from functions import 
+
+users = ("Damian", "Gaba")
 
 class book:
     def __init__(self):
