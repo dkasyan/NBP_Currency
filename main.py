@@ -41,6 +41,13 @@ def read_last_ID_in_book():
     return(last_ID)
     c.close()
 
+def insert_datas_to_db():
+
+def ask_data():
+    # zapytaj o szereg danych potrzebnych w programie
+    # Sprawdzaj czy dane się zgadzaja sie z typem
+
+
 
 while logic == True:
     print("Welcome to Tip Calculator")
