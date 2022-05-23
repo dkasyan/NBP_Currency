@@ -14,3 +14,15 @@ mona dodać remove sh.
 Flask podgląda status i na bierząco pokazuje raport w zł
 
 # na koniec mówi jaki jest nasz majątek z USD bierze pod uwagę ostatnią aktualną walutę. 
+
+## Baza danych
+Kolumny kolejno składają się z 
+* ID - INtiger unikatowe ID dla kazdego wpisu
+* STAT - Informacja czy wpis jest aktywny. Program urzywa tylko danych ustawione jako true
+* CURRE - Waluta jaka wpłyneła do burzetu
+* VALUE - Wartosc jaka wplynela 
+* USER - KTO wprowadzil dane
+* TAG  - Jeden z 9 tagów 
+* RICHES - Ogólny stan majątku
+* datetime - nic innego jak datastamp
+

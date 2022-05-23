@@ -3,17 +3,14 @@ def create_table_in_book():
     readings = {}
     c = conn.cursor()
     counter = 0
-
-    # CREATE TABLE[IF NOT EXISTS][schema_name].table_name(
-    # column_1 data_type PRIMARY KEY,
-# column_2 data_type NOT NULL,
-# column_3 data_type DEFAULT 0,
-# table_constraints
-    # )
     c.execute("""create table if not exists readings (
         ID INTEGER PRIMARY KEY, 
-	    PM25 TEXT NOT NULL,
-	    PM10 TEXT NOT NULL,
+	    STAT TEXT NOT NULL,
+	    CURRE TEXT NOT NULL,
+        VALUE TEXT NOT NULL,
+        USER TEXT NOT NULL,
+        TAG TEXT NOT NULL,
+        RICHES TEXT NOT NULL,
         datetime TEXT NOT NULL
     );""")
 
