@@ -10,6 +10,5 @@ def who_are_you():
               useregzist = True
             else:
                newcomer = input("Zle! Kim jests \n")
-                
 
-who_are_you()
+
