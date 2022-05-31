@@ -1,3 +1,5 @@
+import sqlalchemy
+
 def create_table_in_book():
     conn = sqlite3.connect('example.db')
     readings = {}

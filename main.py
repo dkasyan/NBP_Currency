@@ -1,15 +1,13 @@
 #from msilib.schema import tables
+from locale import currency
 import sqlite3
 import random
 import time
 import datetime
 from venv import create
-import pandas as pd
-import numpy as np
-import sqlalchemy
-
 from manipulate_functions import read_table_in_book
 from check_functions import who_are_you
+from check_functions import currency_checker
 
 users = ("Damian", "Gaba")
 
@@ -22,9 +20,6 @@ class book:
 
 
 logic = True
-
-
-
 
 
 def read_last_ID_in_book():
@@ -41,23 +36,25 @@ def read_last_ID_in_book():
     return(last_ID)
     c.close()
 
-def insert_datas_to_db():
+def ask_datas_to_db():
+    currency_answer = input("Podaj Walute PLN/USD")
+    currency_checker(currency_answer)
+#    value = input("O jakiej kwocie mówimy?")
+#    tag = input("Jaki tag")
+#    date = input("Podaj date")
 
-def ask_data():
-    # zapytaj o szereg danych potrzebnych w programie
-    # Sprawdzaj czy dane się zgadzaja sie z typem
 
+def script_menu():
+    while logic == True:
+        print("Welcome to Tip Calculator")
+        decysion = int(
+            input("Co chcesz wykonać \n"))
+        if decysion == 1:
+            print("oks")
+            read_table_in_book()
+        if decysion == 2:
+            print("dwa")
+            #TODO Add no table error handling
+            create_table_in_book()
 
-
-while logic == True:
-    print("Welcome to Tip Calculator")
-    decysion = int(
-        input("Co chcesz wykonać \n"))
-    if decysion == 1:
-        print("oks")
-        read_table_in_book()
-    if decysion == 2:
-        print("dwa")
-        #TODO Add no table error handling
-        create_table_in_book()
-
+ask_datas_to_db()
