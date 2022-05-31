@@ -1,5 +1,6 @@
 #from msilib.schema import tables
 from locale import currency
+from msilib.schema import RemoveRegistry
 import sqlite3
 import random
 import time
@@ -34,31 +35,22 @@ def read_last_ID_in_book():
 
     last_position = list_row[-1]
     last_ID = last_position[0]
-    return(last_ID)
+    return(last_ID +1)
     c.close()
 
 def ask_datas_to_db():
     registration_list = ()
-    currency_answer = input("Podaj Walute PLN/USD")
-    currency_checker(currency_answer)
-    value = input("O jakiej kwocie mówimy?")
-    valu_checker(value) 
+    registration_list.append(read_last_ID_in_book)
+    registration_list.append(True)
+    registration_list.append("PLN")
+    registration_list.append("Damian")
+    registration_list.append("Rozrywka")
+    registration_list.append(-100)
+    registration_list.append(time.strftime('%Y-%m-%d'))
+    print(registration_list)
+#    currency_answer = input("Podaj Walute PLN/USD")
+#    currency_checker(currency_answer)
+#    value = input("O jakiej kwocie mówimy?")
 
-#    tag = input("Jaki tag")
-#    date = input("Podaj date")
-
-
-def script_menu():
-    while logic == True:
-        print("Welcome to Tip Calculator")
-        decysion = int(
-            input("Co chcesz wykonać \n"))
-        if decysion == 1:
-            print("oks")
-            read_table_in_book()
-        if decysion == 2:
-            print("dwa")
-            #TODO Add no table error handling
-            create_table_in_book()
 
 ask_datas_to_db()
