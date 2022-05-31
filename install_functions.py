@@ -1,4 +1,4 @@
-import sqlalchemy
+import sqlite3
 
 def create_table_in_book():
     conn = sqlite3.connect('example.db')

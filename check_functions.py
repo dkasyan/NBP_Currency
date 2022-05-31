@@ -26,3 +26,6 @@ def currency_checker(a):
       a = input("Podaj Walute PLN/USD")
 
 
+      
+
+

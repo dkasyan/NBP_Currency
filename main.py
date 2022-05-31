@@ -9,6 +9,7 @@ from manipulate_functions import read_table_in_book
 from check_functions import who_are_you
 from check_functions import currency_checker
 
+
 users = ("Damian", "Gaba")
 
 class book:
@@ -37,9 +38,12 @@ def read_last_ID_in_book():
     c.close()
 
 def ask_datas_to_db():
+    registration_list = ()
     currency_answer = input("Podaj Walute PLN/USD")
     currency_checker(currency_answer)
-#    value = input("O jakiej kwocie mówimy?")
+    value = input("O jakiej kwocie mówimy?")
+    valu_checker(value) 
+
 #    tag = input("Jaki tag")
 #    date = input("Podaj date")
 
