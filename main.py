@@ -1,13 +1,17 @@
 #from msilib.schema import tables
+from locale import currency
+from msilib.schema import RemoveRegistry
 import sqlite3
 import random
 import time
 import datetime
 from venv import create
-import pandas as pd
-import numpy as np
-import sqlalchemy
+from manipulate_functions import read_table_in_book
+from check_functions import who_are_you
+from check_functions import currency_checker
 
+
+users = ("Damian", "Gaba")
 
 class book:
     def __init__(self):
@@ -18,50 +22,6 @@ class book:
 
 
 logic = True
-
-
-def create_table_in_book():
-    conn = sqlite3.connect('example.db')
-    readings = {}
-    c = conn.cursor()
-    counter = 0
-
-    # CREATE TABLE[IF NOT EXISTS][schema_name].table_name(
-    # column_1 data_type PRIMARY KEY,
-# column_2 data_type NOT NULL,
-# column_3 data_type DEFAULT 0,
-# table_constraints
-    # )
-    c.execute("""create table if not exists readings (
-        ID INTEGER PRIMARY KEY, 
-	    PM25 TEXT NOT NULL,
-	    PM10 TEXT NOT NULL,
-        datetime TEXT NOT NULL
-    );""")
-
-    while True:
-        readings = {}
-        readings["PM25"] = round(random.uniform(0, 121), 1)
-        readings["PM10"] = round(random.uniform(0, 201), 1)
-        readings["datetime"] = time.strftime('%Y-%m-%d')
-
-        c.execute("INSERT INTO readings VALUES (?,?,?,?)",
-                  (counter, readings["datetime"], readings["PM25"], readings["PM10"]))
-
-        conn.commit()
-
-        counter += 1
-        if counter == 100:
-            break
-
-
-def read_table_in_book():
-    conn = sqlite3.connect('example.db')
-    readings = {}
-    c = conn.cursor()
-    for row in c.execute('SELECT * FROM readings;'):
-        print(row)
-    c.close()
 
 
 def read_last_ID_in_book():
@@ -75,16 +35,22 @@ def read_last_ID_in_book():
 
     last_position = list_row[-1]
     last_ID = last_position[0]
-    return(last_ID)
+    return(last_ID +1)
     c.close()
 
+def ask_datas_to_db():
+    registration_list = ()
+    registration_list.append(read_last_ID_in_book)
+    registration_list.append(True)
+    registration_list.append("PLN")
+    registration_list.append("Damian")
+    registration_list.append("Rozrywka")
+    registration_list.append(-100)
+    registration_list.append(time.strftime('%Y-%m-%d'))
+    print(registration_list)
+#    currency_answer = input("Podaj Walute PLN/USD")
+#    currency_checker(currency_answer)
+#    value = input("O jakiej kwocie mówimy?")
 
-while logic == True:
-    print("Welcome to Tip Calculator")
-    decysion = int(
-        input("Co chcesz wykonać \n"))
-    if decysion == ""
-    
-    
-    print("oks")
 
+ask_datas_to_db()
