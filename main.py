@@ -20,9 +20,7 @@ class book:
     def dodaj(self, x):
         self.dane.append(x)
 
-
 logic = True
-
 
 def read_last_ID_in_book():
     conn = sqlite3.connect('example.db')
@@ -48,8 +46,6 @@ def ask_datas_to_db():
     registration_list.append(-100)
     registration_list.append(time.strftime('%Y-%m-%d'))
     print(registration_list)
-#    currency_answer = input("Podaj Walute PLN/USD")
-#    currency_checker(currency_answer)
 #    value = input("O jakiej kwocie mówimy?")
 
 
