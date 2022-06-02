@@ -1,6 +1,4 @@
-#from msilib.schema import tables
 from locale import currency
-from msilib.schema import RemoveRegistry
 import sqlite3
 import random
 import time
@@ -33,11 +31,12 @@ def read_last_ID_in_book():
 
     last_position = list_row[-1]
     last_ID = last_position[0]
+    print(last_ID + 1)
     return(last_ID +1)
     c.close()
 
 def ask_datas_to_db():
-    registration_list = ()
+    registration_list = []
     registration_list.append(read_last_ID_in_book)
     registration_list.append(True)
     registration_list.append("PLN")
