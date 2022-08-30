@@ -40,7 +40,7 @@ for i in new_data:
 
 
 @app.route('/', methods=['GET', 'POST'])
-def message():
+def main():
     if request.method == "POST":
         datas = request.form
         currency = datas.get('currency')
@@ -49,3 +49,6 @@ def message():
         return render_template("cc_form.html", ask=ask)
     
     return render_template("cc_form.html")
+
+ 
+app.run(host="0.0.0.0", port=98)

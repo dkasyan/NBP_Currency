@@ -1,19 +1,12 @@
 # NBP_Currency
+
+# Uruchomienie flaska w trybie developerskim 
+
+Uruchomienie ze zmienna 
+FLASK_ENV=development
+
 # Stworzenie kalkulatora domowego budrzetu. 
-# Dodawniae za pomocą aplikacji, która korzysta z funkcji. Umieszcza dane w lokalnej bazie danych. 
-# Osobna aplikacja publikuje Server Django który na bierząco wyświetla dane. 
 
-
-Instalacja odbywa się za pomocą sciągnięcia aplikacji 
-# git clone
-następnie uruchomienia instalatora w python3 install.sh
-
-#
-mona dodać remove sh.
-
-Flask podgląda status i na bierząco pokazuje raport w zł
-
-# na koniec mówi jaki jest nasz majątek z USD bierze pod uwagę ostatnią aktualną walutę. 
 
 ## Baza danych
 Kolumny kolejno składają się z 
